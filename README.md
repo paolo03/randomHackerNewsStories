@@ -19,4 +19,4 @@ install dependencies
     
     
 ## DEMO
-http://randomhackernewsstories.dionisio.tech/main
+http://randomhackernewsstories.dionisio.tech/
