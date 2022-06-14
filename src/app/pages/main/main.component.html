@@ -1,0 +1,43 @@
+
+
+  
+
+<div class="main">
+    <ul class="cards">
+        <li *ngFor="let item of storeItems | filter: filter">
+          <div class="card">
+            <div class="wrap">           
+                <img [src]="item!.image" class="card__image" alt="" />
+            </div>
+
+            <div class="card__overlay">
+              <div class="card__header">       
+           
+                <div class="numberCircle">{{item.score}}</div>
+                <div class="card__header-text">
+                  <h3 class="card__title">{{ item.title}}</h3>             
+                 <span class="card__status">by: <b> {{item.author.id}} </b></span>
+           
+                 <div class="card__status">Karma score: <b> {{item.author.karma}}</b> </div>
+                 <div class="card__status">Date: <b> {{item?.time | date: 'medium'}}</b></div>
+                </div>
+              </div>
+
+           <div class="btnCenter">
+            <a [href]="item.url" target="_blank" class="button">read more</a>
+           </div>
+            </div>
+          </div>      
+        </li>
+      </ul>
+</div>
+
+
+  <div *ngIf="!storeItems.length" class="loader"></div>
+
+
+<div id="floating-button" (click)="getStories()">
+    <p class="refreshBtn"><i class="fa fa-refresh" aria-hidden="true"></i></p>
+</div>
+
+
